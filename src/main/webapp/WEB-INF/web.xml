@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+	id="WebApp_ID" version="4.0">
+	<display-name>ENI-Encheres-JAVA-EE</display-name>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
+	
+	<session-config> 
+		<session-timeout>15</session-timeout>
+	</session-config>
+	
+	<listener>
+		<listener-class>fr.eni.Encheres.servlet.ListenerDemarrageSession</listener-class>
+	</listener>
+	
+	<servlet>
+		<description>servlet de test pour récupérer un utilisateur dans la BDD</description>
+		<servlet-name>servletTestGetUser</servlet-name>
+		<servlet-class>fr.eni.Encheres.tests.servletTestGetUser</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>servletTestGetUser</servlet-name>
+		<url-pattern>/servletTestGetUser</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<description>servlet de connexion d'un utilisateur</description>
+		<servlet-name>ServletConnexion</servlet-name>
+		<servlet-class>fr.eni.Encheres.servlet.ServletConnexion</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletConnexion</servlet-name>
+		<url-pattern>/Connexion</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>connexionJSP</servlet-name>
+		<jsp-file>/WEB-INF/pages/connexion.jsp</jsp-file>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>OkJSP</servlet-name>
+		<jsp-file>/WEB-INF/pages/Ok.jsp</jsp-file>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>ErreurJSP</servlet-name>
+		<jsp-file>/WEB-INF/pages/Erreur.jsp</jsp-file>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>inscriptionJSP</servlet-name>
+		<jsp-file>/WEB-INF/pages/inscription.jsp</jsp-file>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>accueilJSP</servlet-name>
+		<jsp-file>/WEB-INF/pages/accueil.jsp</jsp-file>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>detailVenteJSP</servlet-name>
+		<jsp-file>/WEB-INF/pages/detailVente.jsp</jsp-file>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>monProfilJSP</servlet-name>
+		<jsp-file>/WEB-INF/pages/monProfil.jsp</jsp-file>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>venteJSP</servlet-name>
+		<jsp-file>/WEB-INF/pages/vente.jsp</jsp-file>
+	</servlet>
+	
+	<servlet>
+		<description>servlet qui gère les inscription en BDD d'un utilisateur</description>
+		<servlet-name>ServletInscription</servlet-name>
+		<servlet-class>fr.eni.Encheres.servlet.ServletInscription</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletInscription</servlet-name>
+		<url-pattern>/Inscription</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<description>servlet de test pour inserer un utilisateur dans la BDD</description>
+		<servlet-name>servletTestInsertUser</servlet-name>
+		<servlet-class>fr.eni.Encheres.tests.servletTestInsertUser</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>servletTestInsertUser</servlet-name>
+		<url-pattern>/servletTestInsertUser</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<description>servlet qui affiche la page d'accueil</description>
+		<servlet-name>ServletAccueil</servlet-name>
+		<servlet-class>fr.eni.Encheres.servlet.ServletAccueil</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletAccueil</servlet-name>
+		<url-pattern>/Accueil</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<description>servlet de test permettant l'affichage d'un utilisateur</description>
+		<servlet-name>servletTestProfilUtilisateur</servlet-name>
+		<servlet-class>fr.eni.Encheres.tests.servletTestProfilUtilisateur</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>servletTestProfilUtilisateur</servlet-name>
+		<url-pattern>/servletTestProfilUtilisateur</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<description>servlet de test permettant l'affichage des categories</description>
+		<servlet-name>servletTestGetCategories</servlet-name>
+		<servlet-class>fr.eni.Encheres.tests.servletTestGetCategories</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>servletTestGetCategories</servlet-name>
+		<url-pattern>/servletTestGetCategories</url-pattern>
+	</servlet-mapping>
+		
+	<servlet>
+		<description>servlet detail vente</description>
+		<servlet-name>ServletTestDetailVente</servlet-name>
+		<servlet-class>fr.eni.Encheres.servlet.ServletDetailVente</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletTestDetailVente</servlet-name>
+		<url-pattern>/DetailVente</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<description>servlet qui déconnecte la session de l'utilisateur</description>
+		<servlet-name>ServletDeconnexion</servlet-name>
+		<servlet-class>fr.eni.Encheres.servlet.ServletDeconnexion</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletDeconnexion</servlet-name>
+		<url-pattern>/Deconnexion</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<description>servlet de test permettant l'affichage des articles dont la vente est en cours</description>
+		<servlet-name>servletTestGetListeArticlesEnCoursDeVente</servlet-name>
+		<servlet-class>fr.eni.Encheres.tests.servletTestGetListeArticlesEnCoursDeVente</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>servletTestGetListeArticlesEnCoursDeVente</servlet-name>
+		<url-pattern>/servletTestGetListeArticlesEnCoursDeVente</url-pattern>
+	</servlet-mapping>
+	
+		<servlet>
+		<description>servlet qui gère les modifications en BDD d'un utilisateur</description>
+		<servlet-name>ServletModificationProfil</servlet-name>
+		<servlet-class>fr.eni.Encheres.servlet.ServletModificationProfil</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletModificationProfil</servlet-name>
+		<url-pattern>/ModifierMonProfil</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<description>servlet de test pour modifier un utilisateur dans la BDD</description>
+		<servlet-name>servletTestUpdateUser</servlet-name>
+		<servlet-class>fr.eni.Encheres.tests.servletTestUpdateUser</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>servletTestUpdateUser</servlet-name>
+		<url-pattern>/servletTestUpdateUser</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<description>servlet permettant l'affichage d'un utilisateur</description>
+		<servlet-name>ServletProfilUtilisateur</servlet-name>
+		<servlet-class>fr.eni.Encheres.servlet.ServletProfilUtilisateur</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletProfilUtilisateur</servlet-name>
+		<url-pattern>/Profil</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>profileUserJSP</servlet-name>
+		<jsp-file>/WEB-INF/pages/profilUtilisateur.jsp</jsp-file>
+	</servlet>
+	
+	<servlet>
+		<description>servlet permettant de supprimer un utilisateur</description>
+		<servlet-name>ServletSuppressionProfil</servlet-name>
+		<servlet-class>fr.eni.Encheres.servlet.ServletSuppressionProfil</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletSuppressionProfil</servlet-name>
+		<url-pattern>/SupprimerMonCompte</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<description>servlet qui va chercher des articles en fonction de la categorie et/ou du nom de l'article</description>
+		<servlet-name>ServletRechercheArticles</servlet-name>
+		<servlet-class>fr.eni.Encheres.servlet.ServletRechercheArticles</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletRechercheArticles</servlet-name>
+		<url-pattern>/RechercherArticles</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<description>Servlet qui s'occupe d'afficher un ecran pour enregistrer un article à vendre</description>
+		<servlet-name>ServletVente</servlet-name>
+		<servlet-class>fr.eni.Encheres.servlet.ServletVente</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>ServletContact</display-name>
+		<servlet-name>ServletContact</servlet-name>
+		<servlet-class>fr.eni.Encheres.servlet.ServletContact</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletVente</servlet-name>
+		<url-pattern>/VendreUnArticle</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ServletContact</servlet-name>
+		<url-pattern>/Contact</url-pattern>
+	</servlet-mapping>
+		<servlet>
+		<servlet-name>contactJSP</servlet-name>
+		<jsp-file>/WEB-INF/pages/contact.jsp</jsp-file>
+	</servlet>
+
+</web-app>
